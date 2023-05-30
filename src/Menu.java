@@ -14,7 +14,7 @@ public class Menu {
     }
 
 
-
+    // 메뉴 출력 for
     public void listOutput(ArrayList list) {
         for (int i = 0; i < list.size(); i++) {
             Menu menuList = (Menu) list.get(i);
@@ -22,6 +22,7 @@ public class Menu {
         }
     }
 
+    // 확인, 취소 출력
     public void listOutputO(ArrayList list) {
         for (int i = 0; i < list.size(); i++) {
             Menu menuList = (Menu) list.get(i);
@@ -40,7 +41,7 @@ public class Menu {
     }
 
     // 2초 대기 후 이동
-    public static void stop3Second() {
+    public static void stop2Second() {
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {

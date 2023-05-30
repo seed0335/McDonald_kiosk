@@ -1,8 +1,5 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+
 
 public class Product extends Menu {
     public int price;
@@ -17,12 +14,9 @@ public class Product extends Menu {
         this.price = price;
     }
 
-    public Product(String name, String desc, int price, int count) {
-        super(name, desc);
-        this.price = price;
-        this.count = count;
-    }
 
+
+    // name, price,desc 출력 for
     public void listOutput(ArrayList list) {
         int sum = 0;
         double sumD = 0.0;

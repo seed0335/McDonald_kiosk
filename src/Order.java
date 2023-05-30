@@ -1,33 +1,49 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Order{
+public class Order extends Product{
 
+    int count;
 
+    //기본 생성자
+    public Order() {
+    }
+
+    // 추가기능 구현을 위한 count 사용
+    public Order(String name, String desc, int price, int count) {
+        super(name, desc, price);
+        this.count = count;
+    }
 
     // 1,2번에서 받은 주문 저장하기
-    public Product output(ArrayList list, int num) {
-        ArrayList orderList = null;
-        Product productList = (Product) list.get(num - 1);
-        double priceD = (double) productList.price / 1000;
-        System.out.printf("%-18s \t | %2.1f | %s", productList.name, priceD, productList.desc);
+    public Product output(ArrayList list, String str) {
+        if (str.equals("1") || str.equals("2") || str.equals("3") || str.equals("4")){
+            int num = Integer.parseInt(str);
+            ArrayList orderList = null;
+            Product productList = (Product) list.get(num - 1);
+            double priceD = (double) productList.price / 1000;
+            System.out.printf("%-18s \t | %2.1f | %s", productList.name, priceD, productList.desc);
 
-        System.out.println("위 메뉴를 장바구니에 추가하시겠습니까?");
-        System.out.println("1.확인" + "\t" + "2.취소");
-        Scanner scanner = new Scanner(System.in); // Scanner 생성
-        int choice = scanner.nextInt();
-        if (choice == 1) {
-            System.out.println(productList.name + " 메뉴가 추가되었습니다.");
-            Product.stop3Second();
-            return productList;
+            System.out.println("\n위 메뉴를 장바구니에 추가하시겠습니까?\n");
+            System.out.println("1.확인" + "\t" + "2.취소");
+            Scanner scanner = new Scanner(System.in); // Scanner 생성
+            int choice = scanner.nextInt();
+            if (choice == 1) {
+                System.out.println(productList.name + " 메뉴가 추가되었습니다.\n");
+                Product.stop2Second();
+                return productList;
+            } else {
+                System.out.println("취소 되었습니다. 잠시 후 메인으로 돌아갑니다.\n");
+                Product.stop2Second();
+            }
         } else {
-            System.out.println("취소 되었습니다. 잠시 후 메인으로 돌아갑니다.");
-            Product.stop3Second();
+            System.out.println("잠시 후 메인으로 돌아갑니다.");
+            Product.stop2Second();
         }
         return null;
     }
 
-    // 3번 주문 확인 후 취소
+    // 3번 주문 확인 또는 취소
     public void listOutput(ArrayList list) {
         System.out.println("아래와 같이 주문 하시겠습니까?");
         int sum = 0;
@@ -48,11 +64,11 @@ public class Order{
             System.out.println("대기번호는 [ 1 ] 번 입니다.");
             System.out.println("잠시 후 메뉴판으로 돌아갑니다.");
             list.clear();
-            Menu.stop3Second();
+            Menu.stop2Second();
         } else {
             System.out.println("메뉴판으로 돌아갑니다.");
-            Menu.stop3Second();
-
+            Menu.stop2Second();
         }
     }
+
 }
