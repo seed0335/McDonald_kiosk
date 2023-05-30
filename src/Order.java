@@ -28,44 +28,31 @@ public class Order{
     }
 
     // 3번 주문 확인 후 취소
-    public Product listOutput(ArrayList list) {
+    public void listOutput(ArrayList list) {
         System.out.println("아래와 같이 주문 하시겠습니까?");
         int sum = 0;
         double sumD = 0.0;
-        Product pi = null;
-        Product pj = null;
         for (int i = 0; i < list.size(); i++) {
-            for (int j = 1; j < list.size(); j++) {
-                pi = (Product) list.get(i);
-                pj = (Product) list.get(j);
-                if (pi.equals(pj)) {
-                    list.set(i, new Product(pi.name, pi.desc, pi.priceSum = (pi.price * (pi.count+1)), pi.count = (pi.count + 1)));
-
-                } else {
-                    list.add(new Product(pi.name,pi.desc, pi.priceSum, pi.count));
-                }
-            }
+            Product productList = (Product) list.get(i);
+            System.out.println(i + 1 + "." + productList.name + "|" + productList.price + "|" + productList.desc);
+            sum += productList.price;
         }
-        return pi;
+        sumD = (double) sum / 1000;
+        System.out.println("[ Total ]" + "\n" + "W" + sumD + "\n");
+        System.out.println("1.주문" + "\t" + "2.메뉴판");
+        Scanner scanner = new Scanner(System.in); // Scanner 생성
+        int choice = scanner.nextInt();
+        if (choice == 1) {
+            System.out.println("주문이 완료되었습니다!");
+
+            System.out.println("대기번호는 [ 1 ] 번 입니다.");
+            System.out.println("잠시 후 메뉴판으로 돌아갑니다.");
+            list.clear();
+            Menu.stop3Second();
+        } else {
+            System.out.println("메뉴판으로 돌아갑니다.");
+            Menu.stop3Second();
+
+        }
     }
-
-
-
-//        sumD = (double) sum / 1000;
-//        System.out.println("\n [ Total ]" + "\n" + "W" + sumD + "\n");
-//        System.out.println("1.주문" + "\t" + "2.메뉴판");
-//        Scanner scanner = new Scanner(System.in); // Scanner 생성
-//        int choice = scanner.nextInt();
-//        if (choice == 1) {
-//            System.out.println("주문이 완료되었습니다!");
-//
-//            System.out.println("대기번호는 [ 1 ] 번 입니다.");
-//            System.out.println("잠시 후 메뉴판으로 돌아갑니다.");
-//            list.clear();
-//            Menu.stop3Second();
-//        } else {
-//            System.out.println("메뉴판으로 돌아갑니다.");
-//            Menu.stop3Second();
-
-        }
-
+}

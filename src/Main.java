@@ -21,7 +21,7 @@ public class Main {
 
         // hamburgerArr instance 생성 및 배열추가
         ArrayList hamburgerArr = new ArrayList();
-        hamburgerArr.add(new Product("hamburger1", "맛잇음", 1100));
+        hamburgerArr.add(new Product("hamburger1", "맛잇음", 1000));
         hamburgerArr.add(new Product("hamburger2", "맛잇음", 1000));
         hamburgerArr.add(new Product("hamburger3", "맛잇음", 1000));
         hamburgerArr.add(new Product("hamburger4", "맛잇음", 1000));
@@ -72,8 +72,7 @@ public class Main {
 
             } else if (choice == 3) {
 
-                Product p1 = order.listOutput(orderList);
-                System.out.println(p1.name + p1.price + p1.desc + p1.priceSum + p1.count);
+                order.listOutput(orderList);
 
             } else if (choice == 4) {
                 if (orderList.isEmpty() == true) {
