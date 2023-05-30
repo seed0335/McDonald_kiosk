@@ -7,7 +7,8 @@ import java.util.Scanner;
 public class Product extends Menu {
     public int price;
 
-    public int count;
+    public int priceSum;
+    public int count = 1;
 
     public Product() {
     }
