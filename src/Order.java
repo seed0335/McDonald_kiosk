@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Order extends Product{
 
@@ -44,13 +46,13 @@ public class Order extends Product{
     }
 
     // 3번 주문 확인 또는 취소
-    public void listOutput(ArrayList list) {
+    public void listOutputOrder(ArrayList list) {
         System.out.println("아래와 같이 주문 하시겠습니까?");
         int sum = 0;
         double sumD = 0.0;
         for (int i = 0; i < list.size(); i++) {
-            Product productList = (Product) list.get(i);
-            System.out.println(i + 1 + "." + productList.name + "|" + productList.price + "|" + productList.desc);
+            Order productList = (Order) list.get(i);
+            System.out.println(i + 1 + "." + productList.name + "|" + productList.price + "|" + productList.desc + "|" + productList.count);
             sum += productList.price;
         }
         sumD = (double) sum / 1000;
@@ -71,4 +73,27 @@ public class Order extends Product{
         }
     }
 
+    public ArrayList orderCountAdd(ArrayList orderList){
+        for (int i = 0; i < orderList.size(); i++) {
+            Product oi = (Product) orderList.get(i);
+            orderList.set(i,(new Order(oi.name, oi.desc, oi.price, 1)));
+        }
+        return orderList;
+    }
+
+    public ArrayList orderCount(ArrayList orderList) {
+        for (int i = 0; i < orderList.size(); i++) {
+            int count = 0;
+            for (int j = 0; j < orderList.size(); j++) {
+                Order oi = (Order) orderList.get(i);
+                Order oj = (Order) orderList.get(j);
+                if(oi.name.equals(oj.name) == true){
+                    count += 1;
+                    orderList.set(i,(new Order(oi.name, oi.desc, oi.price, count)));
+
+                }
+            }
+        }
+        return orderList;
+    }
 }

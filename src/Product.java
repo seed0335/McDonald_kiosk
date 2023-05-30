@@ -4,8 +4,6 @@ import java.util.ArrayList;
 public class Product extends Menu {
     public int price;
 
-    public int count;
-
     public Product() {
     }
 

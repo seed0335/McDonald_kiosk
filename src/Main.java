@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
@@ -69,7 +71,12 @@ public class Main {
                 orderList.add(order.output(drinkArr, choice1));
 
             } else if (choice.equals("3")) {
-                order.listOutput(orderList);
+                ArrayList orderList1 = (ArrayList) order.orderCountAdd(orderList);
+                ArrayList orderList2 = (ArrayList) order.orderCount(orderList1);
+                orderList2.stream()
+                                .distinct();
+                order.listOutputOrder(orderList2);
+
 
             } else if (choice.equals("4")) {
                 if (orderList == null) {

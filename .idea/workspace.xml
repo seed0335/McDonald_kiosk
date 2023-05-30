@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9bc9815-29f4-4b7b-ad06-c2611cbf65fd" name="Changes" comment="망함요 ㅠㅠ">
+    <list default="true" id="f9bc9815-29f4-4b7b-ad06-c2611cbf65fd" name="Changes" comment="추가기능을 추가를 위해서 돌아갈지점">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Product.java" afterDir="false" />
     </list>
@@ -69,6 +68,14 @@
       <option name="presentableId" value="Default" />
       <updated>1685332461679</updated>
     </task>
+    <task id="LOCAL-00001" summary="추가기능을 추가를 위해서 돌아갈지점">
+      <created>1685414673385</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1685414673385</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -81,5 +88,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <MESSAGE value="추가기능을 추가를 위해서 돌아갈 지점 생성" />
+    <MESSAGE value="추가기능을 추가를 위해서 돌아갈지점" />
+    <option name="LAST_COMMIT_MESSAGE" value="추가기능을 추가를 위해서 돌아갈지점" />
   </component>
 </project>
