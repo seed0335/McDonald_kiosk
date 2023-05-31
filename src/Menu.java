@@ -1,4 +1,7 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Menu {
     public String name;
@@ -15,24 +18,24 @@ public class Menu {
 
 
     // 메뉴 출력 for
-    public void listOutput(ArrayList list) {
-        for (int i = 0; i < list.size(); i++) {
+    public void listOutput(List list) {
+        for(int i = 0; i < list.size(); i++) {
             Menu menuList = (Menu) list.get(i);
-            System.out.println(i + 1 + "." + menuList.name + "|" + menuList.desc);
+            System.out.printf("%d. %-18s \t | %s \n" ,i+1, menuList.name, menuList.desc);
         }
     }
 
     // 확인, 취소 출력
-    public void listOutputO(ArrayList list) {
-        for (int i = 0; i < list.size(); i++) {
+    public void listOutputO(List list) {
+        for(int i = 0; i < list.size(); i++) {
             Menu menuList = (Menu) list.get(i);
-            System.out.println(i + 3 + "." + menuList.name + "|" + menuList.desc);
+            System.out.printf("%d. %-18s \t | %s \n" ,i+5, menuList.name, menuList.desc);
         }
     }
 
     //greeting
     public static void greeting(){
-        System.out.println("\"BUGERKING에 오신 것을 환영합니다.\" \n 아래 메뉴판을 보시고 주문해주세요.\n");
+        System.out.println("\"McDonald's에 오신 것을 환영합니다.\" \n 아래 메뉴판을 보시고 주문해주세요.\n");
     }
 
     //title method
